@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to FIREBASE</h1>
+    <h2>Realtime Database</h2>
+    <pre id="realtime-data"></pre>
+    <button onclick="setData()">set</button>
+    <button onclick="updateData()">update</button>
+    <button onclick="pushData()">push</button>
+    <button onclick="deleteData()">delete</button>
+    <hr>
+    <h2>Cloud Storage</h2>
+    <h4 id="progress"></h4>
+    <div id="file-list"></div>
+    <input id="input-file" type="file" onchange="addFile()">
+    <br>
+    <button onclick="upload()">upload</button>
+    <button onclick="pause()">pause</button>
+    <button onclick="resume()">resume</button>
+    <button onclick="cancel()">cancel</button>
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCu7FSbVAurLEqb8A8p0wPnXU-ssAIlUM8",
+            authDomain: "fir-firstmeet.firebaseapp.com",
+            databaseURL: "https://fir-firstmeet.firebaseio.com",
+            projectId: "fir-firstmeet",
+            storageBucket: "fir-firstmeet.appspot.com",
+            messagingSenderId: "304785158541"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <hr>
+    <h2>Aythentication</h2>
+    <pre id="auth-info"></pre>
+    <input type="text" placeholder="email" id="email">
+    <input type="password" placeholder="password" id="password">
+    <br>
+    <button onclick="createUser()">Create User</button>
+    <button onclick="loginWithEmail()">Login</button>
+    <br>
+    <button onclick="loginWithGoogle()">Login with Google</button>
+    <button onclick="loginWithFacebook()">Login with Facebook</button>
+    <br>
+    <button onclick="logout()">Logout</button>
+    
+
+    <script src="database.js"></script>
+    <script src="storage.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>
